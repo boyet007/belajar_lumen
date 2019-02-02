@@ -39,5 +39,24 @@ class ExampleController extends Controller
         return $request->path;
     }
 
+    public function postUserProfile(Request $request) {
+        // $user['name'] = $request->name;
+        // $user['username'] = $request->username;
+        // $user['password'] = $request->password;
+        
+        // return $user;
+        
+        //default apabila null
+        // $request->input('name', 'John Doe');
+        // return $request->all();
+
+        if ($request->has('name')) {
+            return 'success';
+        } else {
+            return 'fail';
+        }
+
+    }
+
     //
 }

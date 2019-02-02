@@ -29,6 +29,8 @@ $router->get('/foo/bar', 'ExampleController@fooBar');
 $router->get('/user/{id}', 'ExampleController@getUserId');
 $router->get('/post/cat1/{cat1}/cat2/{cat2}', 'ExampleController@getPost'); 
 
+$router->post('user/profile', 'ExampleController@postUserProfile');
+
 $router->get('/profile', ['as' => 'profile', 'uses' => 'ExampleController@getProfile']);
 // http://localhost:8000/profile
 // Route Profile Action : http://localhost:8000/profil/action
