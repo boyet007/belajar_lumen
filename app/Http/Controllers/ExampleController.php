@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
 class ExampleController extends Controller
 {
     /**
@@ -31,6 +33,10 @@ class ExampleController extends Controller
 
     public function getProfileAction() {
         return 'Route profile : ' . route('profile');
+    }
+
+    public function fooBar(Request $request) {
+        return $request->path;
     }
 
     //

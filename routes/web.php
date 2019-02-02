@@ -23,6 +23,8 @@ $router->get('/foo', function() {
     return 'Hello, GET Method';
 });
 
+$router->get('/foo/bar', 'ExampleController@fooBar');
+
 
 $router->get('/user/{id}', 'ExampleController@getUserId');
 $router->get('/post/cat1/{cat1}/cat2/{cat2}', 'ExampleController@getPost'); 
