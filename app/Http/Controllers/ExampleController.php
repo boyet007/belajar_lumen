@@ -11,7 +11,9 @@ class ExampleController extends Controller
      */
     public function __construct()
     {
-
+        $this->middleware('age', ['only' => ['getUserId']]); 
+        //only -> cuman fungsi didalam array yang kena middleware age
+        //except -> semua fungsi kecuali didalam array kena middleware age
     }
 
     public function getUserId($id) {
