@@ -22,3 +22,12 @@ $router->get('/key', function() {
 $router->get('/foo', function() {
     return 'Hello, GET Method';
 });
+
+$router->get('/admin/home', ['middleware' => 'age', function(){
+    return 'Cukup Umur';
+}]);
+//http://localhost:8000/admin/home?age=21
+
+$router->get('/fail', function() {
+    return 'Belum cukup umur';
+});
