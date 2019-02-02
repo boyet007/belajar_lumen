@@ -45,3 +45,6 @@ $router->get('/admin/home', ['middleware' => 'age', function(){
 $router->get('/fail', function() {
     return 'Belum cukup umur';
 });
+
+
+$router->get('/response', 'ExampleController@response');

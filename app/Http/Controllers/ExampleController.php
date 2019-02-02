@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ExampleController extends Controller
 {
@@ -56,6 +57,19 @@ class ExampleController extends Controller
             return 'fail';
         }
 
+    }
+
+    public function response() {
+        //$data['status'] = 'Data sukses dibikin';
+        //return (new Response($data, 201));
+            //-> header('Content-Type', 'application/json');
+            
+        //return response ($data, 201);
+
+        return response()->json([
+            'message' => 'Fail! not found',
+            'status' => false
+        ], 404);
     }
 
     //
