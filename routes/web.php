@@ -31,3 +31,6 @@ $router->get('/admin/home', ['middleware' => 'age', function(){
 $router->get('/fail', function() {
     return 'Belum cukup umur';
 });
+
+$router->get('/user/{id}', 'ExampleController@getUserId');
+$router->get('/post/cat1/{cat1}/cat2/{cat2}', 'ExampleController@getPost');
