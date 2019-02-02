@@ -19,6 +19,10 @@ $router->get('/key', function() {
     return str_random(32);
 });
 
+$router->post('/register', 'AuthController@registerUser');
+$router->post('/login', 'AuthController@login');
+$router->get('/user/{id}', 'UserController@getUserId');
+
 $router->get('/foo', function() {
     return 'Hello, GET Method';
 });
@@ -26,7 +30,7 @@ $router->get('/foo', function() {
 $router->get('/foo/bar', 'ExampleController@fooBar');
 
 
-$router->get('/user/{id}', 'ExampleController@getUserId');
+$router->get('/getUser/{id}', 'ExampleController@getUserId');
 $router->get('/post/cat1/{cat1}/cat2/{cat2}', 'ExampleController@getPost'); 
 
 $router->post('user/profile', 'ExampleController@postUserProfile');
