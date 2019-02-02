@@ -23,6 +23,16 @@ $router->get('/foo', function() {
     return 'Hello, GET Method';
 });
 
+
+$router->get('/user/{id}', 'ExampleController@getUserId');
+$router->get('/post/cat1/{cat1}/cat2/{cat2}', 'ExampleController@getPost'); 
+
+$router->get('/profile', ['as' => 'profile', 'uses' => 'ExampleController@getProfile']);
+// http://localhost:8000/profile
+// Route Profile Action : http://localhost:8000/profil/action
+
+$router->get('/profil/action', ['as' => 'profile.action', 'uses' => 'ExampleController@getProfileAction']);
+
 $router->get('/admin/home', ['middleware' => 'age', function(){
     return 'Cukup Umur';
 }]);
@@ -31,6 +41,3 @@ $router->get('/admin/home', ['middleware' => 'age', function(){
 $router->get('/fail', function() {
     return 'Belum cukup umur';
 });
-
-$router->get('/user/{id}', 'ExampleController@getUserId');
-$router->get('/post/cat1/{cat1}/cat2/{cat2}', 'ExampleController@getPost');

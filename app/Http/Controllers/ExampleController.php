@@ -22,5 +22,14 @@ class ExampleController extends Controller
         return 'Categori 1 : ' . $cat1 . ' Categori 2 : ' . $cat2;
     }
 
+    public function getProfile() {
+        //return 'Route Profile Action : ' . route('profile.action');
+        echo "<a href='" . route('profile.action') . "'>My route profile</a>";
+    }
+
+    public function getProfileAction() {
+        return 'Route profile : ' . route('profile');
+    }
+
     //
 }
